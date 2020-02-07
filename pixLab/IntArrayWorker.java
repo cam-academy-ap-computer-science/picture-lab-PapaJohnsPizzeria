@@ -100,5 +100,12 @@ public class IntArrayWorker
       }
     }
   }
+  public int getCount(int i) {
+	  private int result = 0;
+	  for() {
+		  
+	  }
+	  return result;
+  }
  
 }
