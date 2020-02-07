@@ -84,28 +84,46 @@ public class IntArrayWorker
   /** 
    * fill the array with a pattern
    */
-  public void fillPattern1()
-  {
-    for (int row = 0; row < matrix.length; row++)
-    {
-      for (int col = 0; col < matrix[0].length; 
-           col++)
-      {
+  public void fillPattern1() {
+    for (int row = 0; row < matrix.length; row++) {
+      for (int col = 0; col < matrix[0].length; col++) {
         if (row < col)
-          matrix[row][col] = 1;
+        	matrix[row][col] = 1;
         else if (row == col)
-          matrix[row][col] = 2;
+        	matrix[row][col] = 2;
         else
-          matrix[row][col] = 3;
+        	matrix[row][col] = 3;
       }
     }
   }
   public int getCount(int i) {
-	  private int result = 0;
-	  for() {
-		  
+	  int result = 0;
+	  for (int row = 0; row < matrix.length; row++) {
+	      for (int col = 0; col < matrix[0].length; col++) {
+	    	  if(matrix[row][col] == i) {
+	    		  result++;
+	    	  }
+	      }
 	  }
 	  return result;
+  }
+  public int getLargest() {
+	  int largest = 0;
+	  for (int row = 0; row < matrix.length; row++) {
+	      for (int col = 0; col < matrix[0].length; col++) {
+	    	  if(matrix[row][col] > largest) {
+	    		  largest = matrix[row][col];
+	    	  }
+	      }
+	  }
+	  return largest;
+  }
+  public int getColTotal(int i) {
+	  int sum = 0;
+	  for (int row = 0; row < matrix.length; row++) {
+		  sum += matrix[row][i];
+	  }
+	  return sum;
   }
  
 }
