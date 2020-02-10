@@ -8,15 +8,20 @@ package pixLab;
  * 
  * @author Barbara Ericson 
  */
-public class PictureTester
-{
+public class PictureTester {
   /** Method to test zeroBlue */
-  public static void testZeroBlue()
-  {
-    Picture beach = new Picture("beach.jpg");
+  public static void testZeroBlue() {
+    Picture beach = new Picture("U:\\git\\picture-lab-PapaJohnsPizzeria\\images\\beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
+  }
+  
+  public static void testKeepOnlyBlue() {
+	    Picture beach = new Picture("U:\\git\\picture-lab-PapaJohnsPizzeria\\images\\beach.jpg");
+	    beach.explore();
+	    beach.KeepOnlyBlue();
+	    beach.explore();
   }
   
   /** Method to test mirrorVertical */
@@ -60,8 +65,8 @@ public class PictureTester
     // uncomment a call here to run a test
     // and comment out the ones you don't want
     // to run
-    testZeroBlue();
-    //testKeepOnlyBlue();
+    //testZeroBlue();
+    testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
     //testNegate();

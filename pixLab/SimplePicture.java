@@ -45,9 +45,9 @@ public class SimplePicture implements DigitalPicture
    * extension for this file (jpg or bmp)
    */
   private String extension;
+
   
- 
- /////////////////////// Constructors /////////////////////////
+  /////////////////////// Constructors /////////////////////////
  
  /**
   * A Constructor that takes no arguments.  It creates a picture with
