@@ -110,6 +110,41 @@ public class Picture extends SimplePicture
     }
   }
   
+  public void negate() {
+	    Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels) {
+	      for (Pixel pixelObj : rowArray) {
+	        pixelObj.setRed(255 - pixelObj.getRed());
+	        pixelObj.setGreen(255 - pixelObj.getGreen());
+	        pixelObj.setBlue(255 - pixelObj.getBlue());
+	      }
+	    }
+	  }
+  public void grayscale() {
+	  Pixel[][] pixels = this.getPixels2D();
+	  for (Pixel[] rowArray : pixels) {
+		  for (Pixel pixelObj : rowArray) {
+			  pixelObj.setBlue((pixelObj.getBlue() + pixelObj.getGreen() + pixelObj.getRed()) / 3);
+			  pixelObj.setGreen((pixelObj.getGreen() + pixelObj.getRed() + pixelObj.getBlue()) / 3);
+			  pixelObj.setRed((pixelObj.getRed() + pixelObj.getBlue() + pixelObj.getGreen()) / 3);
+		  }
+	  }
+  }
+  
+  public void mirrorHorizontal() {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel topPixel = null;
+	  Pixel botPixel = null;
+	  int height = pixels.length;
+	  for (int row = 0; row < height / 2; row++) {
+		  for (int col = 0; col < pixels[0].length; col++) {
+			  topPixel = pixels[row][col];
+			  botPixel = pixels[height - row - 1][col];
+			  botPixel.setColor(topPixel.getColor());
+		  }
+	  }
+  }
+  
   /** Method that mirrors the picture around a 
     * vertical mirror in the center of the picture
     * from left to right */
