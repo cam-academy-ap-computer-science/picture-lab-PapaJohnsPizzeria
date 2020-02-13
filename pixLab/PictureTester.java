@@ -25,7 +25,7 @@ public class PictureTester {
   }
   
   public static void testNegate() {
-	  Picture beach = new Picture("C:\\Users\\Elect\\git\\picture-lab-PapaJohnsPizzeria\\images\\beach.jpg");
+	  Picture beach = new Picture("images\\IMG_8628.jpg");
 	    beach.explore();
 	    beach.negate();
 	    beach.explore();
@@ -60,11 +60,18 @@ public static void testMirrorHorizontal() {
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
 }
+
+public static void testMirrorHorizontalBotToTop() {
+	Picture caterpillar = new Picture("U:\\git\\picture-lab-PapaJohnsPizzeria\\images\\caterpillar.jpg");
+    caterpillar.explore();
+    caterpillar.mirrorHorizontal();
+    caterpillar.explore();
+}
   
   /** Method to test mirrorTemple */
   public static void testMirrorTemple()
   {
-    Picture temple = new Picture("temple.jpg");
+    Picture temple = new Picture("images\\temple.jpg");
     temple.explore();
     temple.mirrorTemple();
     temple.explore();
@@ -97,12 +104,13 @@ public static void testMirrorHorizontal() {
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    //testNegate();
+    testNegate();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
-	testmirrorVerticalRightToLeft();
+	//testmirrorVerticalRightToLeft();
 	//testMirrorHorizontal();
+	//testMirrorHorizontalBotToTop();
     //testMirrorTemple();
     //testMirrorArms();
     //testMirrorGull();

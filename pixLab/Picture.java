@@ -120,6 +120,8 @@ public class Picture extends SimplePicture
 	      }
 	    }
 	  }
+  
+  
   public void grayscale() {
 	  Pixel[][] pixels = this.getPixels2D();
 	  for (Pixel[] rowArray : pixels) {
@@ -141,6 +143,20 @@ public class Picture extends SimplePicture
 			  topPixel = pixels[row][col];
 			  botPixel = pixels[height - row - 1][col];
 			  botPixel.setColor(topPixel.getColor());
+		  }
+	  }
+  }
+  
+  public void mirrorHorizontalBotToTop() {
+	  Pixel[][] pixels = this.getPixels2D();
+	  Pixel topPixel = null;
+	  Pixel botPixel = null;
+	  int height = pixels.length;
+	  for (int row = 0; row < height / 2; row++) {
+		  for (int col = 0; col < pixels[0].length; col++) {
+			  topPixel = pixels[row][col];
+			  botPixel = pixels[height - row - 1][col];
+			  topPixel.setColor(botPixel.getColor());
 		  }
 	  }
   }
@@ -183,8 +199,7 @@ public class Picture extends SimplePicture
   }
   
   /** Mirror just part of a picture of a temple */
-  public void mirrorTemple()
-  {
+  public void mirrorTemple() {
     int mirrorPoint = 276;
     Pixel leftPixel = null;
     Pixel rightPixel = null;
@@ -197,13 +212,14 @@ public class Picture extends SimplePicture
       // loop from 13 to just before the mirror point
       for (int col = 13; col < mirrorPoint; col++)
       {
-        
+        count++;
         leftPixel = pixels[row][col];      
         rightPixel = pixels[row]                       
                          [mirrorPoint - col + mirrorPoint];
         rightPixel.setColor(leftPixel.getColor());
       }
     }
+    System.out.print(count);
   }
   
   /** copy from the passed fromPic to the
