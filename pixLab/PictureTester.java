@@ -80,7 +80,7 @@ public static void testMirrorHorizontalBotToTop() {
   /** Method to test the collage method */
   public static void testCollage()
   {
-    Picture canvas = new Picture("640x480.jpg");
+    Picture canvas = new Picture("images\\640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
@@ -104,7 +104,7 @@ public static void testMirrorHorizontalBotToTop() {
     //testKeepOnlyBlue();
     //testKeepOnlyRed();
     //testKeepOnlyGreen();
-    testNegate();
+    //testNegate();
     //testGrayscale();
     //testFixUnderwater();
     //testMirrorVertical();
@@ -115,7 +115,7 @@ public static void testMirrorHorizontalBotToTop() {
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
-    //testCollage();
+    testCollage();
     //testCopy();
     //testEdgeDetection();
     //testEdgeDetection2();

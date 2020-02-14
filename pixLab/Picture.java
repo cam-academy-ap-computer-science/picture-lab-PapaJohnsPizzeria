@@ -229,9 +229,7 @@ public class Picture extends SimplePicture
     * @param startRow the start row to copy to
     * @param startCol the start col to copy to
     */
-  public void copy(Picture fromPic, 
-                 int startRow, int startCol)
-  {
+  public void copy(Picture fromPic, int startRow, int startCol) {
     Pixel fromPixel = null;
     Pixel toPixel = null;
     Pixel[][] toPixels = this.getPixels2D();
@@ -239,7 +237,7 @@ public class Picture extends SimplePicture
     for (int fromRow = 0, toRow = startRow; 
          fromRow < fromPixels.length &&
          toRow < toPixels.length; 
-         fromRow++, toRow++)
+         fromRow++, toRow++) 
     {
       for (int fromCol = 0, toCol = startCol; 
            fromCol < fromPixels[0].length &&
@@ -252,22 +250,52 @@ public class Picture extends SimplePicture
       }
     }   
   }
+  
+  public void copy2(Picture fromPic, int fromStartRow, int fromStartCol,
+		  int fromEndRow, int fromEndCol, int toStartRow, int toStartCol) {
+	Pixel fromPixel = null;
+	Pixel toPixel = null;
+	Pixel[][] toPixels = this.getPixels2D();
+	Pixel[][] fromPixels = fromPic.getPixels2D();
+	for (int fromRow = fromStartRow, toRow = toStartRow;
+			fromRow <= fromEndRow && toRow < toPixels.length;
+			fromRow++, toRow++) {
+		for (int fromCol = fromStartCol, toCol = toStartCol;
+				fromCol <= fromEndCol && toCol < toPixels[0].length;
+				fromCol++, toCol++)
+		  {
+
+		  fromPixel = fromPixels[fromRow][fromCol];
+		  toPixel = toPixels[toRow][toCol];
+		  toPixel.setColor(fromPixel.getColor());
+		  }
+		  }
+		  }
+  
 
   /** Method to create a collage of several pictures */
   public void createCollage()
   {
-    Picture flower1 = new Picture("flower1.jpg");
-    Picture flower2 = new Picture("flower2.jpg");
+    Picture flower1 = new Picture("images\\flower1.jpg");
+    Picture flower2 = new Picture("images\\flower2.jpg");
+    Picture flower3 = new Picture("images\\flower3.jpg");
     this.copy(flower1,0,0);
     this.copy(flower2,100,0);
     this.copy(flower1,200,0);
+    this.copy(flower3,200,0);
+    
     Picture flowerNoBlue = new Picture(flower2);
     flowerNoBlue.zeroBlue();
+    this.copy(flowerNoBlue,300,0);
+    
+    flower3.KeepOnlyBlue();
+    this.copy(flowerNoBlue,300,0);
+    
     this.copy(flowerNoBlue,300,0);
     this.copy(flower1,400,0);
     this.copy(flower2,500,0);
     this.mirrorVertical();
-    this.write("collage.jpg");
+    this.write("images\\collage.jpg");
   }
   
   
@@ -303,7 +331,7 @@ public class Picture extends SimplePicture
    */
   public static void main(String[] args) 
   {
-    Picture beach = new Picture("beach.jpg");
+    Picture beach = new Picture("images\\beach.jpg");
     beach.explore();
     beach.zeroBlue();
     beach.explore();
