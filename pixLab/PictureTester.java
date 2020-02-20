@@ -92,17 +92,22 @@ public static void testMirrorHorizontalBotToTop() {
   }
   
   /** Method to test the collage method */
-  public static void testCollage()
-  {
+  public static void testCollage() {
     Picture canvas = new Picture("images\\640x480.jpg");
     canvas.createCollage();
     canvas.explore();
   }
   
+  public static void testMyCollage() {
+	    Picture canvas = new Picture("images\\640x480.jpg");
+	    canvas.myCollage();
+	    canvas.explore();
+	  }
+  
   /** Method to test edgeDetection */
-  public static void testEdgeDetection()
-  {
-    Picture swan = new Picture("swan.jpg");
+  public static void testEdgeDetection() {
+    Picture swan = new Picture("images\\swan.jpg");
+    swan.explore();
     swan.edgeDetection(10);
     swan.explore();
   }
@@ -127,13 +132,13 @@ public static void testMirrorHorizontalBotToTop() {
 	//testMirrorHorizontalBotToTop();
     //testMirrorTemple();
 	//testMirrorArms();
-	testMirrorGull();
+	//testMirrorGull();
     //testMirrorArms();
     //testMirrorGull();
     //testMirrorDiagonal();
     //testCollage();
     //testCopy();
-    //testEdgeDetection();
+    testEdgeDetection();
     //testEdgeDetection2();
     //testChromakey();
     //testEncodeAndDecode();
