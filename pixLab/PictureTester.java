@@ -106,7 +106,7 @@ public static void testMirrorHorizontalBotToTop() {
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection() {
-    Picture swan = new Picture("images\\swan.jpg");
+    Picture swan = new Picture("images\\proofOfConcept.jpg");
     swan.explore();
     swan.edgeDetection(10);
     swan.explore();
