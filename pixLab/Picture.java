@@ -121,6 +121,18 @@ public class Picture extends SimplePicture
 	    }
 	  }
   
+  public void YRBKBlue() {
+	    Pixel[][] pixels = this.getPixels2D();
+	    for (Pixel[] rowArray : pixels) {
+	      for (Pixel pixelObj : rowArray) {
+	        if()
+	        pixelObj.setRed(14);
+	        pixelObj.setGreen(48);
+	        pixelObj.setBlue(148);
+	      }
+	    }
+	  }
+  
   
   public void grayscale() {
 	  Pixel[][] pixels = this.getPixels2D();
@@ -143,6 +155,7 @@ public class Picture extends SimplePicture
 			  topPixel = pixels[row][col];
 			  botPixel = pixels[height - row - 1][col];
 			  botPixel.setColor(topPixel.getColor());
+			  System.out.println(topPixel.getColor());
 		  }
 	  }
   }
