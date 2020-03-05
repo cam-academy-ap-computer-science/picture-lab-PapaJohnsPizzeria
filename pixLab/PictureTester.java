@@ -62,7 +62,7 @@ public static void testMirrorHorizontal() {
 }
 
 public static void testMirrorHorizontalBotToTop() {
-	Picture caterpillar = new Picture("U:\\git\\picture-lab-PapaJohnsPizzeria\\images\\caterpillar.jpg");
+	Picture caterpillar = new Picture("images\\B2FD366E6F86FBEB240D11146F8F6ECA.jpg");
     caterpillar.explore();
     caterpillar.mirrorHorizontal();
     caterpillar.explore();
@@ -106,9 +106,9 @@ public static void testMirrorHorizontalBotToTop() {
   
   /** Method to test edgeDetection */
   public static void testEdgeDetection() {
-    Picture swan = new Picture("images\\proofOfConcept.jpg");
+    Picture swan = new Picture("images\\B2FD366E6F86FBEB240D11146F8F6ECA.jpg");
     swan.explore();
-    swan.edgeDetection(10);
+    swan.edgeDetection(20);
     swan.explore();
   }
   
